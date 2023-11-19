@@ -23,3 +23,16 @@ test('add a Movie to the cart', () => {
   cart.add(new Movie(1010, 'The Avengers', 800, 2012, 'USA', 'Avangers Assemble', 'sci-fi, action, fantasy, adventure', 137));
   expect(cart.items.length).toBe(3);
 });
+
+test('total Summ of Cart', () => {
+  expect(cart.caulculateSumm()).toBe(3700);
+});
+
+test('Summ with discount', () => {
+  expect(cart.culculateDiscount(10)).toBe(3330);
+});
+
+test('delete a Move (id 1010)', () => {
+  cart.delete(1010);
+  expect(cart.items.length).toBe(2);
+});
